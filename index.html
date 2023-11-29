@@ -8,14 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = "h1">
-     <h1>Makeup Products</h1>
+    <div id="main">
+        <div id = "h1">
+        <h1>Makeup Products</h1>
+        </div>
+        <form id = "brandForm">
+            <label for="brandInput">Enter brand Name</label>
+            <input type="text" id="brandInput" required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="productsList"></div>
     </div>
-    <form id = "brandForm">
-        <label for="brandInput">Enter brand Name</label>
-        <button type="submit">Search</button>
-    </form>
-    <div id="productsList"></div>
 
 </body>
 </html>
