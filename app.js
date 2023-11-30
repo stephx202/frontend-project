@@ -43,21 +43,26 @@ $(document).ready(function(){
         // Otherwise, append each element to the products list.
         } else {
             products.forEach((product) => {
-                let productContainer = $("<div></div>").addClass("productInfo");
+                let productContainer = $("<div></div>").addClass("productInfoCard");
                 let productImage = $("<img></img>").attr("src", product.api_featured_image).css("width","150px").css("height","auto");
+                let productRating = $("<img></img>").attr("src", "https://img.freepik.com/premium-vector/vector-black-isolated-five-stars-customer-feedback-concept_189959-1082.jpg?w=1800").attr("id","productRating");
                 let productBrand = $("<div></div>").text(product.brand);
                 let productCategory = $("<div></div>").text(product.category);
                 let productName = $("<div></div>").text(product.name);
                 let productPrice = $("<div></div>").text("$" + product.price);
                 let productType = $("<div></div>").text(product.product_type);
                 productContainer.append(productImage);
+                productContainer.append(productRating);
                 productContainer.append(productBrand);
                 productContainer.append(productCategory);
                 productContainer.append(productName);
-                productContainer.append(productPrice);
                 productContainer.append(productType);
+                productContainer.append(productPrice);
                 $productsList.append(productContainer);
             });
         }
     }
 });
+
+
+//attr("src", "https://img.freepik.com/premium-vector/vector-black-isolated-five-stars-customer-feedback-concept_189959-1082.jpg?w=1800").css("width","50").css("height","auto");
