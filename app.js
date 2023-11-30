@@ -27,6 +27,7 @@ $(document).ready(function(){
         
         //use $.get and attach url for search type with search input, and display data (console.log(data)).
         $.get(url, (data) => {
+            
             console.log(data);
             // Call function for when the user clicks search button. display elements on each product. 
             displayProducts(data);

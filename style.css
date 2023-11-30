@@ -1,8 +1,12 @@
 body{
-    background-color: rgb(196, 196, 245);
+    background-color: #e4e2dd;
     flex-wrap: wrap;
     align-content: center;
 }
+#main{
+    background-color:#e4e2dd;
+}
+
 #productsList{
     background-color:white;
     display: flex;
