@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     // Want to append to the productsList. This is going to be the results.
     let $productsList = $("#productsList");
 
@@ -43,12 +44,19 @@ $(document).ready(function(){
         // Otherwise, append each element to the products list.
         } else {
             products.forEach((product) => {
+                //array for a random star rating and add to the productRating
+                let starRatingsArr = ["threeStar.png", "fourStar.png", "fivestar.png"];
+                //random index of starRatings array
+                let starRatingIndex = Math.floor(Math.random() * starRatingsArr.length);
+                let starRating= starRatingsArr[starRatingIndex];
+
+                //creat produt conatianer and its elements. append to productContainer and append Conatiner to productList.
                 let productContainer = $("<div></div>").addClass("productInfoCard");
                 let productImage = $("<img></img>").attr("src", product.api_featured_image).css("width","150px").css("height","auto");
-                let productRating = $("<img></img>").attr("src", "https://img.freepik.com/premium-vector/vector-black-isolated-five-stars-customer-feedback-concept_189959-1082.jpg?w=1800").attr("id","productRating");
+                let productRating = $("<img></img>").attr("src", starRating).attr("id","productRating");
                 let productBrand = $("<div></div>").text(product.brand);
                 let productCategory = $("<div></div>").text(product.category);
-                let productName = $("<div></div>").text(product.name);
+                let productName = $("<div></div>").text(product.name).attr("id","productName");
                 let productPrice = $("<div></div>").text("$" + product.price);
                 let productType = $("<div></div>").text(product.product_type);
                 productContainer.append(productImage);
@@ -62,7 +70,14 @@ $(document).ready(function(){
             });
         }
     }
+
+    //array for a random star rating and add to the productRating
+    // const starRatingsArr = ["threeStar.png", "fourStar.png", "fivestar.png"];
+    // //random inder of starRatings array
+    // const starRatingIndex = Math.floor(Math.random() * starRatingsArr.length);
+    // //console.log(starRatingIndex)
+    // const starRating= starRatingsArr[starRatingIndex];
+    // console.log(starRating)
 });
 
-
-//attr("src", "https://img.freepik.com/premium-vector/vector-black-isolated-five-stars-customer-feedback-concept_189959-1082.jpg?w=1800").css("width","50").css("height","auto");
+//add id to product image to control border radius. maybe add ids to all divs
