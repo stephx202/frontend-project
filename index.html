@@ -13,9 +13,13 @@
         <div id = "h1">
         <h1>Makeup Products</h1>
         </div>
-        <form id = "brandForm">
-            <label for="brandInput">Enter brand Name</label>
-            <input type="text" id="brandInput" required >
+        <form id = "searchForm">
+            <label for="searchType">Category:</label>
+            <select id="searchType">
+                <option value="brand">Brand</option>
+                <option value="product_type">Product</option>
+            </select>
+            <input type="text" id="searchInput" required >
             <button id="buttonID" type="submit">Search</button>
         </form>
         <div id="productsList"></div>
