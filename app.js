@@ -24,11 +24,11 @@ $(document).ready(function(){
         //if the search type value is what user selected, then reassign api's url to that specific one
         //and add the search input URI at the end of the value for new url.
         if (searchType === "brand"){
-            url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${searchInputURI}`;
+            url = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${searchInputURI}`;
         } else if (searchType === "product_type"){
-            url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${searchInputURI}`;
+            url = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${searchInputURI}`;
         }else if(searchType ==="product_tags"){
-            url= `http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${searchInputURI}`;
+            url= `https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${searchInputURI}`;
         }
         
         //use $.get and attach url for search type with search input, and display data (console.log(data)).
