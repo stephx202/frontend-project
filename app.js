@@ -54,7 +54,7 @@ $(document).ready(function(){
         } else {
             products.forEach((product) => {
                 //array for a random star rating and add to the productRating
-                let starRatingsArr = ["threeStar.png", "fourStar.png", "fivestar.png"];
+                let starRatingsArr = ["threeStar.png", "fourStar.png", "fiveStar.png"];
                 //random index of starRatings array
                 let starRatingIndex = Math.floor(Math.random() * starRatingsArr.length);
                 let starRating= starRatingsArr[starRatingIndex];
