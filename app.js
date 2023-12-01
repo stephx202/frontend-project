@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    //variable for 2nd image after api's url is called. 
+    let loadPageImg2 = $("<img></img>").attr("src","loadPageImg2.jpg").attr("id","loadPageImg2");
+
+
+
 
     // Want to append to the productsList. This is going to be the results.
     let $productsList = $("#productsList");
@@ -18,16 +23,19 @@ $(document).ready(function(){
 
         //if the search type value is what user selected, then reassign api's url to that specific one
         //and add the search input URI at the end of the value for new url.
-        if (searchType === "brand") {
+        if (searchType === "brand"){
             url = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${searchInputURI}`;
-        } else if (searchType === "product_type") {
+        } else if (searchType === "product_type"){
             url = `http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${searchInputURI}`;
+        }else if(searchType ==="product_tags"){
+            url= `http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=${searchInputURI}`;
         }
-        //////////////////******ADD MORE URLS LIKE WHATS ABOVE************* *////////////////////////
         
         //use $.get and attach url for search type with search input, and display data (console.log(data)).
         $.get(url, (data) => {
-            
+            //change size of img and add anopther img
+            $("#loadPageImg").css("width","350");
+            $("#main").append(loadPageImg2)
             console.log(data);
             // Call function for when the user clicks search button. display elements on each product. 
             displayProducts(data);
@@ -71,14 +79,4 @@ $(document).ready(function(){
             });
         }
     }
-
-    //array for a random star rating and add to the productRating
-    // const starRatingsArr = ["threeStar.png", "fourStar.png", "fivestar.png"];
-    // //random inder of starRatings array
-    // const starRatingIndex = Math.floor(Math.random() * starRatingsArr.length);
-    // //console.log(starRatingIndex)
-    // const starRating= starRatingsArr[starRatingIndex];
-    // console.log(starRating)
 });
-
-//add id to product image to control border radius. maybe add ids to all divs
